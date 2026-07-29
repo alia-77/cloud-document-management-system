@@ -11,6 +11,7 @@ from app.core.config import settings
 from app.db.database import Base
 import app.models.user
 from app.core.config import settings
+from app.models.document import Document
 
 
 # this is the Alembic Config object, which provides
