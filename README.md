@@ -1,6 +1,6 @@
 # Cloud Document Management System
 
-A backend API for a cloud-based document management system built with **FastAPI** and **PostgreSQL**.
+A backend API for a cloud-based document management system built with **FastAPI**, **PostgreSQL**, and **AWS S3**.
 
 ---
 
@@ -12,6 +12,8 @@ A backend API for a cloud-based document management system built with **FastAPI*
 * Alembic
 * JWT Authentication
 * Passlib (bcrypt)
+* AWS S3
+* Boto3
 * Python 3.12
 
 ---
@@ -48,22 +50,44 @@ A backend API for a cloud-based document management system built with **FastAPI*
 
 ---
 
-## Phase 2 (Next)
+## Phase 2: Document Management (Completed)
 
-* Create Document model
-* Upload files
-* Store file metadata
+### Document System
+
+* Document model
+* File upload
+* File metadata storage
 * Associate documents with users
 * List user documents
 * Download documents
 * Delete documents
-* Restrict users to their own files
+* User authorization
+
+### API Endpoints
+
+* `POST /documents/upload`
+* `GET /documents`
+* `GET /documents/{document_id}`
+* `DELETE /documents/{document_id}`
+
+---
+
+## Phase 3: Cloud Storage (AWS S3) (Completed)
+
+### AWS Integration
+
+* AWS S3 bucket
+* IAM user and access keys
+* Boto3 integration
+* Upload files to AWS S3
+* Download files from AWS S3
+* Delete files from AWS S3
+* Store S3 object keys in PostgreSQL
 
 ---
 
 ## Future Improvements
 
-* AWS S3 storage
 * Docker
 * Redis caching
 * Background tasks
@@ -71,6 +95,7 @@ A backend API for a cloud-based document management system built with **FastAPI*
 * Password reset
 * CI/CD
 * Deployment
+* React frontend
 * Unit and integration tests
 
 ---
@@ -78,8 +103,9 @@ A backend API for a cloud-based document management system built with **FastAPI*
 ## Progress
 
 * [x] Phase 1 – Authentication
-* [ ] Phase 2 – Document Management
-* [ ] Phase 3 – Cloud Storage (AWS S3)
+* [x] Phase 2 – Document Management
+* [x] Phase 3 – Cloud Storage (AWS S3)
 * [ ] Phase 4 – Docker
 * [ ] Phase 5 – Deployment
 * [ ] Phase 6 – CI/CD
+* [ ] Phase 7 – React Frontend

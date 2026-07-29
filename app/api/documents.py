@@ -1,17 +1,13 @@
-import os
-import uuid
-import shutil
-
-from app.models.document import Document
-from app.schemas.document import DocumentResponse
-
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 
-from app.db.database import get_db
 from app.core.auth import get_current_user
+from app.db.database import get_db
+from app.models.document import Document
 from app.models.user import User
+from app.schemas.document import DocumentResponse
+from app.services.s3 import upload_file_to_s3, download_file_from_s3, delete_file_from_s3
 
 
 router = APIRouter(
@@ -26,25 +22,13 @@ def upload_document(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    extension = os.path.splitext(file.filename)[1]
-
-    stored_filename = f"{uuid.uuid4()}{extension}"
-
-    file_path = os.path.join(
-        "uploads",
-        stored_filename
-    )
-
-    with open(file_path, "wb") as buffer:
-        shutil.copyfileobj(
-            file.file,
-            buffer
-        )
+    
+    stored_filename = upload_file_to_s3(file)
 
     document = Document(
         original_filename=file.filename,
         stored_filename=stored_filename,
-        file_path=file_path,
+        file_path=stored_filename,
         file_size=file.size,
         content_type=file.content_type,
         owner_id=current_user.id
@@ -102,8 +86,12 @@ def download_document(
             detail="Access denied"
         )
 
+    temp_path = download_file_from_s3(
+        document.stored_filename
+    )
+
     return FileResponse(
-        path=document.file_path,
+        path=temp_path,
         filename=document.original_filename,
         media_type=document.content_type
     )
@@ -133,8 +121,9 @@ def delete_document(
             detail="Access denied"
         )
 
-    if os.path.exists(document.file_path):
-        os.remove(document.file_path)
+    delete_file_from_s3(
+        document.stored_filename
+    )
 
     db.delete(document)
     db.commit()
