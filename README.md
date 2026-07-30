@@ -101,7 +101,6 @@ A backend API for a cloud-based document management system built with **FastAPI*
 
 ## Future Improvements
 
-* Docker
 * Redis caching
 * Background tasks
 * Email verification
