@@ -86,6 +86,19 @@ A backend API for a cloud-based document management system built with **FastAPI*
 
 ---
 
+## Phase 4: Docker (Completed)
+
+### Containerization
+
+- Dockerized FastAPI application
+- Dockerized PostgreSQL database
+- Docker Compose orchestration
+- Persistent PostgreSQL volumes
+- Health checks for database startup
+- Environment variable management
+
+---
+
 ## Future Improvements
 
 * Docker
@@ -102,10 +115,10 @@ A backend API for a cloud-based document management system built with **FastAPI*
 
 ## Progress
 
-* [x] Phase 1 – Authentication
-* [x] Phase 2 – Document Management
-* [x] Phase 3 – Cloud Storage (AWS S3)
-* [ ] Phase 4 – Docker
-* [ ] Phase 5 – Deployment
-* [ ] Phase 6 – CI/CD
-* [ ] Phase 7 – React Frontend
+- [x] Phase 1 – Authentication
+- [x] Phase 2 – Document Management
+- [x] Phase 3 – Cloud Storage (AWS S3)
+- [x] Phase 4 – Docker
+- [ ] Phase 5 – Deployment
+- [ ] Phase 6 – CI/CD
+- [ ] Phase 7 – React Frontend

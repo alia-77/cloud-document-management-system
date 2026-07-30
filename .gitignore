@@ -5,12 +5,12 @@ __pycache__/
 temp/
 uploads/
 .env
+.env.docker
 
 .idea/
 .vscode/
 
 .pytest_cache/
-
 *.sqlite3
 
 .DS_Store
