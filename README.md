@@ -1,6 +1,14 @@
 # Cloud Document Management System
 
-A backend API for a cloud-based document management system built with **FastAPI**, **PostgreSQL**, and **AWS S3**.
+A secure cloud-based document management system that enables authenticated users to manage their personal documents through a RESTful API. The application uses PostgreSQL for metadata storage, AWS S3 for file storage, and is containerized with Docker and deployed on Railway.
+
+---
+
+## Live Demo
+
+**API Documentation (Swagger UI)**
+
+https://cloud-document-management-system-production.up.railway.app/docs
 
 ---
 
@@ -14,33 +22,32 @@ A backend API for a cloud-based document management system built with **FastAPI*
 * Passlib (bcrypt)
 * AWS S3
 * Boto3
+* Docker
+* Railway
 * Python 3.12
+
+---
+
+## Features
+
+* Secure JWT authentication
+* Upload, download, list, and delete documents
+* AWS S3 cloud file storage
+* PostgreSQL metadata management
+* Dockerized deployment
+* Live deployment on Railway
 
 ---
 
 ## Phase 1: Authentication (Completed)
 
-### Project Setup
+### Features
 
-* FastAPI project structure
-* Environment variables (`.env`)
-* PostgreSQL database
-* SQLAlchemy ORM
-* Alembic migrations
-
-### User System
-
-* User model
-* Password hashing
 * User registration
 * User login
-
-### Authentication
-
-* JWT token generation
-* JWT validation
+* Password hashing
+* JWT authentication
 * Protected routes
-* Current authenticated user endpoint
 
 ### API Endpoints
 
@@ -52,16 +59,13 @@ A backend API for a cloud-based document management system built with **FastAPI*
 
 ## Phase 2: Document Management (Completed)
 
-### Document System
+### Features
 
-* Document model
-* File upload
-* File metadata storage
-* Associate documents with users
+* Upload documents
 * List user documents
 * Download documents
 * Delete documents
-* User authorization
+* User-based access control
 
 ### API Endpoints
 
@@ -74,50 +78,59 @@ A backend API for a cloud-based document management system built with **FastAPI*
 
 ## Phase 3: Cloud Storage (AWS S3) (Completed)
 
-### AWS Integration
+### Features
 
-* AWS S3 bucket
-* IAM user and access keys
-* Boto3 integration
-* Upload files to AWS S3
-* Download files from AWS S3
-* Delete files from AWS S3
-* Store S3 object keys in PostgreSQL
+* AWS S3 integration
+* File upload to AWS S3
+* File download from AWS S3
+* File deletion from AWS S3
+* Store file metadata in PostgreSQL
 
 ---
 
 ## Phase 4: Docker (Completed)
 
-### Containerization
+### Features
 
-- Dockerized FastAPI application
-- Dockerized PostgreSQL database
-- Docker Compose orchestration
-- Persistent PostgreSQL volumes
-- Health checks for database startup
-- Environment variable management
+* Dockerized FastAPI application
+* Dockerized PostgreSQL database
+* Docker Compose orchestration
+* Persistent database volumes
+* Health checks
+* Environment variable management
+
+---
+
+## Phase 5: Deployment (Completed)
+
+### Features
+
+* Railway deployment
+* Cloud PostgreSQL database
+* Production environment variables
+* Alembic database migrations
+* Public API documentation
 
 ---
 
 ## Future Improvements
 
+* CI/CD with GitHub Actions
+* React frontend
 * Redis caching
 * Background tasks
 * Email verification
 * Password reset
-* CI/CD
-* Deployment
-* React frontend
-* Unit and integration tests
+* Unit & integration testing
 
 ---
 
 ## Progress
 
-- [x] Phase 1 – Authentication
-- [x] Phase 2 – Document Management
-- [x] Phase 3 – Cloud Storage (AWS S3)
-- [x] Phase 4 – Docker
-- [ ] Phase 5 – Deployment
-- [ ] Phase 6 – CI/CD
-- [ ] Phase 7 – React Frontend
+* [x] Phase 1 – Authentication
+* [x] Phase 2 – Document Management
+* [x] Phase 3 – Cloud Storage (AWS S3)
+* [x] Phase 4 – Docker
+* [x] Phase 5 – Deployment
+* [ ] Phase 6 – CI/CD
+* [ ] Phase 7 – React Frontend
