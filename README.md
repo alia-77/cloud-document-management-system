@@ -6,7 +6,7 @@ A secure cloud-based document management system that enables authenticated users
 
 ## Live Demo
 
-**API Documentation (Swagger UI)**
+**Swagger UI**
 
 https://cloud-document-management-system-production.up.railway.app/docs
 
@@ -25,6 +25,7 @@ https://cloud-document-management-system-production.up.railway.app/docs
 * Docker
 * Railway
 * Python 3.12
+* GitHub Actions (CI)
 
 ---
 
@@ -115,7 +116,6 @@ https://cloud-document-management-system-production.up.railway.app/docs
 
 ## Future Improvements
 
-* CI/CD with GitHub Actions
 * React frontend
 * Redis caching
 * Background tasks
@@ -132,5 +132,5 @@ https://cloud-document-management-system-production.up.railway.app/docs
 * [x] Phase 3 – Cloud Storage (AWS S3)
 * [x] Phase 4 – Docker
 * [x] Phase 5 – Deployment
-* [ ] Phase 6 – CI/CD
+* [x] Phase 6 – GitHub Actions (CI)
 * [ ] Phase 7 – React Frontend
